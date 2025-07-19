@@ -1,138 +1,56 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Keeping Fit Medical</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Keeping Fit Store</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-    }
-    header {
-      background: #157347;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    .hero {
-      padding: 2rem;
-      background: #e1f2ea;
-      text-align: center;
-    }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-    }
-    .product {
-      background: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .product h3 {
-      margin-top: 0;
-    }
-    .price {
-      font-weight: bold;
-      margin: 0.5rem 0;
-    }
-    .pay-buttons {
-      margin-top: 1rem;
-    }
-    .pay-buttons a, .pay-buttons form {
-      display: inline-block;
-      margin: 0.25rem;
-    }
-    .pay-buttons button {
-      background: #157347;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    footer {
-      background: #222;
-      color: #ccc;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
+    body { font-family: sans-serif; margin: 0; padding: 20px; background: #f8f8f8; }
+    h1 { color: #444; }
+    .product { background: white; border-radius: 8px; padding: 15px; margin: 10px 0; box-shadow: 0 0 5px rgba(0,0,0,0.1); display: flex; align-items: center; }
+    .product img { width: 100px; height: 100px; object-fit: cover; margin-right: 15px; border-radius: 6px; }
+    .product h3 { margin: 0 0 5px; }
+    .product p { margin: 2px 0; color: #666; }
+    .order-btn { background: #25D366; color: white; text-decoration: none; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-top: 5px; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Keeping Fit Medical</h1>
-    <p>Your trusted pharmacy for wellness & pleasure</p>
-  </header>
+  <h1>My Online Trusted Store</h1>
 
-  <section class="hero">
-    <h2>Welcome to Our Store</h2>
-    <p>Affordable pharmacy products and wellness services delivered with care</p>
-  </section>
-
-  <section class="products">
-    <div class="product">
-      <h3>Tital Gel</h3>
-      <p class="price">KShs 650</p>
-      <p>Enhance performance and confidence with this effective gel.</p>
-      <div class="pay-buttons">
-        <a href="tel:*334*1*0758173874*650#"><button>Pay with M-Pesa</button></a>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="cmd" value="_xclick">
-          <input type="hidden" name="business" value="johnessonsongo21@gmail.com">
-          <input type="hidden" name="item_name" value="Tital Gel">
-          <input type="hidden" name="amount" value="5">
-          <input type="hidden" name="currency_code" value="USD">
-          <button type="submit">Pay with PayPal</button>
-        </form>
-      </div>
+  <!-- Sample product layout for 11 products -->
+  <!-- Only a few shown for simplicity -->
+  <div class="product">
+    <img src="https://i.imgur.com/WbJ1dLv.jpeg" alt="Bullet Vibrator Light Purple">
+    <div>
+      <h3>Bullet Female Vibrator - Light Purple</h3>
+      <p>Compact and powerful pleasure tool in a sleek purple rubber casing.</p>
+      <p><strong>KShs 850</strong></p>
+      <a class="order-btn" href="https://wa.me/254758173874?text=Hi,%20I%20would%20like%20to%20order%20Bullet%20Female%20Vibrator%20-%20Light%20Purple%20(KShs%20850)">Order Now</a>
     </div>
+  </div>
 
-    <div class="product">
-      <h3>Women's G Spot Vibrator</h3>
-      <p class="price">KShs 1450</p>
-      <p>Dual action vibrator for deeper pleasure and satisfaction.</p>
-      <div class="pay-buttons">
-        <a href="tel:*334*1*0758173874*1450#"><button>Pay with M-Pesa</button></a>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="cmd" value="_xclick">
-          <input type="hidden" name="business" value="johnessonsongo21@gmail.com">
-          <input type="hidden" name="item_name" value="G Spot Vibrator">
-          <input type="hidden" name="amount" value="11">
-          <input type="hidden" name="currency_code" value="USD">
-          <button type="submit">Pay with PayPal</button>
-        </form>
-      </div>
+  <div class="product">
+    <img src="https://i.imgur.com/60QvRqb.jpeg" alt="Pocket Pussy">
+    <div>
+      <h3>Pocket Pussy Sex Doll Toy For Men</h3>
+      <p>Discreet and realistic design for solo pleasure on the go.</p>
+      <p><strong>KShs 2600</strong></p>
+      <a class="order-btn" href="https://wa.me/254758173874?text=Hi,%20I%20would%20like%20to%20order%20Pocket%20Pussy%20Sex%20Doll%20Toy%20For%20Men%20(KShs%202600)">Order Now</a>
     </div>
+  </div>
 
-    <div class="product">
-      <h3>Rose Toy Vibrator</h3>
-      <p class="price">KShs 2250</p>
-      <p>Discreet, elegant design with powerful suction function.</p>
-      <div class="pay-buttons">
-        <a href="tel:*334*1*0758173874*2250#"><button>Pay with M-Pesa</button></a>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="cmd" value="_xclick">
-          <input type="hidden" name="business" value="johnessonsongo21@gmail.com">
-          <input type="hidden" name="item_name" value="Rose Toy Vibrator">
-          <input type="hidden" name="amount" value="17">
-          <input type="hidden" name="currency_code" value="USD">
-          <button type="submit">Pay with PayPal</button>
-        </form>
-      </div>
+  <div class="product">
+    <img src="https://i.imgur.com/Fz5c9Fx.jpeg" alt="3in1 Masturbator Cup">
+    <div>
+      <h3>3in1 Realistic Oral Clitt Vagina for Men</h3>
+      <p>Triple sensation adult toy with a tight and realistic interior feel.</p>
+      <p><strong>KShs 6500</strong></p>
+      <a class="order-btn" href="https://wa.me/254758173874?text=Hi,%20I%20would%20like%20to%20order%203in1%20Realistic%20Oral%20Clitt%20Vagina%20(KShs%206500)">Order Now</a>
     </div>
-  </section>
+  </div>
 
-  <footer>
-    <p>Contact us on WhatsApp | Pay with M-Pesa, PayPal, Cards & Bank Transfer</p>
-    <p>Call/SMS for bank transfer instructions: 0758 173874</p>
-  </footer>
+  <!-- More items would be listed in the same structure -->
+
 </body>
 </html>
