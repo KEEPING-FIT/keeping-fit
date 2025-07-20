@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sex Shop</title>
+  <title>Quality Sex Shop Health</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     body {
@@ -11,6 +11,20 @@
       margin: 0;
       padding: 0;
       background-color: #f9f9f9;
+    }
+    .top-bar {
+      background-color: #f1f1f1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      color: #333;
+    }
+    .top-bar img {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
     }
     header, footer {
       background-color: #1e90ff;
@@ -73,12 +87,36 @@
       width: 24px;
       height: 24px;
     }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+    .whatsapp-float img {
+      width: 30px;
+      height: 30px;
+    }
   </style>
 </head>
 <body>
+  <div class="top-bar">
+    <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Customer Care Icon">
+    <span>Customer Care: +254 758 173 874</span>
+  </div>
+
   <header>
     <img src="https://i.imgur.com/zrYOeP7.png" alt="Sex Shop Logo" class="logo">
-    <h1>Sex Shop</h1>
+    <h1>Quality Sex Shop Health</h1>
     <p>Your health, our priority.</p>
   </header>
 
@@ -88,12 +126,16 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Sex Shop. All rights reserved.</p>
+    <p>&copy; 2025 Quality Sex Shop Health. All rights reserved.</p>
     <div class="footer-social">
       <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram Icon">
       <a href="https://instagram.com/j_uky1" target="_blank" style="color:white;">@j_uky1</a>
     </div>
   </footer>
+
+  <a href="https://wa.me/254758173874" target="_blank" class="whatsapp-float">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Icon">
+  </a>
 </body>
 </html>
 
