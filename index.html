@@ -6,6 +6,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Keeping Fit Pharmacy</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header, footer {
+      background-color: #1e90ff;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin: 1rem;
+      padding: 1rem;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .product-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .order-button {
+      background-color: #25d366;
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -15,7 +58,7 @@
 
   <section class="products">
     <div class="product-card">
-      <img src="images/paracetamol.jpg" alt="Paracetamol 500mg" class="product-image">
+      <img src="https://i.imgur.com/WW2b5qz.jpg" alt="Paracetamol 500mg" class="product-image">
       <h3 class="product-title">Paracetamol 500mg</h3>
       <p class="product-description">Effective pain reliever and fever reducer.</p>
       <p class="product-price">Ksh 150</p>
@@ -23,7 +66,7 @@
     </div>
 
     <div class="product-card">
-      <img src="images/amoxicillin.jpg" alt="Amoxicillin 250mg" class="product-image">
+      <img src="https://i.imgur.com/Bn3cFcp.jpg" alt="Amoxicillin 250mg" class="product-image">
       <h3 class="product-title">Amoxicillin 250mg</h3>
       <p class="product-description">Antibiotic for bacterial infections.</p>
       <p class="product-price">Ksh 300</p>
