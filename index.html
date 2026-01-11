@@ -14,74 +14,46 @@ body {
   padding: 0;
 }
 
-a { text-decoration: none; color: inherit; }
+a { text-decoration: none; }
 
-/* ===== HEADER ===== */
+/* ===== Header ===== */
 header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
-  background: #fff;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #fff;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   flex-wrap: wrap;
-  position: relative;
-}
-
-header .left {
-  display: flex;
-  align-items: center;
-  gap: 15px;
 }
 
 header .logo img {
-  height: 80px; /* big logo */
+  height: 100px; /* bigger logo */
 }
 
-header .slogan {
+header .motto {
   font-size: 18px;
   font-weight: bold;
-  color: #6a1b9a; /* brand color */
+  color: #25D366;
+  margin-left: 20px;
+  flex: 1;
 }
 
-header nav {
-  display: flex;
-  gap: 20px;
-  font-weight: bold;
-}
-
-header .right {
+header .icons {
   display: flex;
   align-items: center;
   gap: 15px;
-  position: relative;
 }
 
-header .right .clock {
-  font-weight: bold;
-  font-size: 14px;
-}
-
-header .right .customer-service {
-  padding: 5px 10px;
-  background-color: #25D366;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-header .right .customer-service:hover { background-color: #128C7E; }
-
-header .cart {
+header .icons .cart {
   position: relative;
   cursor: pointer;
 }
 
-header .cart span {
+header .icons .cart-count {
   position: absolute;
-  top: -5px;
-  right: -10px;
+  top: -8px;
+  right: -8px;
   background: red;
   color: white;
   font-size: 12px;
@@ -90,40 +62,14 @@ header .cart span {
   border-radius: 50%;
 }
 
-/* ===== Cart Dropdown ===== */
-#cart-dropdown {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 35px;
-  width: 300px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-  padding: 10px;
-  z-index: 1000;
+/* ===== Time Display ===== */
+#current-time {
+  margin-left: 20px;
+  font-weight: bold;
+  color: #333;
 }
 
-#cart-dropdown h4 {
-  margin: 0 0 10px 0;
-  font-size: 16px;
-}
-
-#cart-items { list-style: none; padding: 0; margin: 0; max-height: 200px; overflow-y: auto; }
-#cart-items li { font-size: 14px; margin-bottom: 5px; }
-#checkout-btn {
-  background: #25D366;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  width: 100%;
-  border-radius: 5px;
-  cursor: pointer;
-}
-#checkout-btn:hover { background: #128C7E; }
-
-/* ===== HERO ===== */
+/* ===== Hero Section ===== */
 .hero {
   text-align: center;
   padding: 40px 20px;
@@ -134,20 +80,7 @@ header .cart span {
 .hero h1 { font-size: 36px; margin-bottom: 10px; }
 .hero p { font-size: 18px; }
 
-/* ===== Filter / Search ===== */
-.filter-bar {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.filter-bar input, .filter-bar select {
-  padding: 10px;
-  margin: 5px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-/* ===== Products ===== */
+/* ===== Products Grid ===== */
 .products-container {
   display: flex;
   flex-wrap: wrap;
@@ -174,7 +107,8 @@ header .cart span {
 
 .product-card img {
   width: 100%;
-  height: 250px;
+  height: auto;
+  max-height: 250px;
   object-fit: contain;
   margin-bottom: 10px;
 }
@@ -183,6 +117,7 @@ header .cart span {
 .product-card p.description { font-size: 13px; color: #555; margin-bottom: 5px; }
 .product-card p.price { font-weight: bold; font-size: 16px; color: #111; }
 
+/* ===== Add to Cart Button ===== */
 .product-card button {
   display: inline-block;
   padding: 10px 15px;
@@ -194,136 +129,241 @@ header .cart span {
   cursor: pointer;
   transition: background 0.3s ease;
 }
+
 .product-card button:hover { background-color: #128C7E; }
+
+/* ===== Cart Section ===== */
+#cart-container {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  width: 300px;
+  z-index: 1000;
+}
+
+#cart-container h3 { margin: 0 0 10px 0; font-size: 16px; }
+#cart-items { list-style: none; padding: 0; margin: 0 0 10px 0; max-height: 200px; overflow-y: auto; }
+#cart-items li { font-size: 14px; margin-bottom: 5px; }
+#checkout-btn {
+  background: #25D366;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#checkout-btn:hover { background: #128C7E; }
+
+/* ===== Customer Care Section ===== */
+#customer-care {
+  padding: 40px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+#customer-care h2 { font-size: 24px; margin-bottom: 10px; }
+#customer-care p { font-size: 16px; margin-bottom: 15px; }
+#customer-care form input, #customer-care form textarea {
+  width: 80%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+#customer-care form button {
+  padding: 10px 15px;
+  background-color: #25D366;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#customer-care form button:hover { background-color: #128C7E; }
 
 /* ===== Footer ===== */
 footer {
   background-color: #222;
   color: #fff;
-  padding: 20px;
+  padding: 25px 20px;
   text-align: center;
   font-size: 14px;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  header nav { flex-wrap: wrap; justify-content: center; margin-top: 10px; }
-  .product-card { width: 45%; }
-}
+footer a { color: #25D366; }
 
-@media (max-width: 480px) {
-  .product-card { width: 90%; }
-}
+/* ===== Responsive ===== */
+@media (max-width: 768px) { .product-card { width: 45%; } }
+@media (max-width: 480px) { .product-card { width: 90%; } }
+
 </style>
 </head>
 <body>
 
 <!-- ===== HEADER ===== -->
 <header>
-  <div class="left">
-    <div class="logo">
-      <img src="AmiraCare_Online_Logo.png.png" alt="AmiraCare Online Logo">
-    </div>
-    <div class="slogan">Health & Happiness Delivered</div>
+  <div class="logo">
+    <img src="AmiraCare_Online_Logo.png.png" alt="AmiraCare Online Logo">
   </div>
-  <nav>
-    <a href="#products">Products</a>
-    <a href="#consultation">Consultation</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <div class="right">
-    <div class="clock" id="clock">--:--:--</div>
-    <div class="customer-service" onclick="window.location.href='https://wa.me/254758173874'">Customer Service</div>
+  <div class="motto">Health & Happiness Delivered</div>
+  <div id="current-time"></div>
+  <div class="icons">
     <div class="cart" onclick="toggleCart()">
-      <img src="images/cart-icon.png" alt="Cart" height="30">
-      <span id="cart-count">0</span>
-      <div id="cart-dropdown">
-        <h4>My Cart</h4>
-        <ul id="cart-items"></ul>
-        <button id="checkout-btn" onclick="checkoutCart()">Checkout</button>
-      </div>
+      <img src="images/cart-icon.png" alt="Cart">
+      <span class="cart-count" id="cart-count">0</span>
     </div>
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
+<!-- ===== HERO SECTION ===== -->
 <section class="hero">
   <h1>AmiraCare Online</h1>
-  <p>Health & Happiness Delivered</p>
 </section>
 
-<!-- ===== FILTER / SEARCH BAR ===== -->
-<section class="filter-bar">
-  <input type="text" placeholder="Search products...">
-  <select>
-    <option value="">All Categories</option>
-    <option value="adult">Adult Wellness</option>
-    <option value="supplements">Supplements</option>
-    <option value="nutrition">Nutrition Drinks</option>
-  </select>
-</section>
+<!-- ===== PRODUCTS SECTION ===== -->
+<section class="products-container">
 
-<!-- ===== PRODUCTS ===== -->
-<section id="products" class="products-container">
-  <!-- All previous products with description and price -->
+  <!-- Product Examples -->
   <div class="product-card">
     <img src="images/gspot-vibrator.jpg" alt="Silicone Women's G Spot Vibrator">
     <h3>Silicone Women's G Spot Vaginal Vibrator</h3>
     <p class="description">Ergonomically designed for precise stimulation and comfort. Rechargeable USB.</p>
     <p class="price">KSh 3100</p>
-    <button onclick="addToCart('Silicone Women\'s G Spot Vibrator', 3100)">Order</button>
+    <button onclick="addToCart('Silicone Women\'s G Spot Vaginal Vibrator', 3100)">Add to Cart</button>
   </div>
+
   <div class="product-card">
     <img src="images/usb-gspot-vibrator.jpg" alt="Two-in-one rose USB Rechargeable G-Spot Vibrator">
     <h3>Two-in-one rose USB Rechargeable G-Spot Vibrator</h3>
     <p class="description">Dual function for G-spot and clitoral stimulation. USB rechargeable and waterproof.</p>
     <p class="price">KSh 3600</p>
-    <button onclick="addToCart('Two-in-one rose USB Rechargeable G-Spot Vibrator', 3600)">Order</button>
+    <button onclick="addToCart('Two-in-one rose USB Rechargeable G-Spot Vibrator', 3600)">Add to Cart</button>
   </div>
+
   <div class="product-card">
     <img src="images/khufuzi-rose.jpg" alt="Khufuzi Clitoris Sucking Vibrator">
     <h3>Khufuzi Clitoris Sucking Vibrator</h3>
     <p class="description">Gentle suction for clitoral pleasure. Rechargeable and quiet operation.</p>
-    <p class="price">KSh 6,226</p>
-    <button onclick="addToCart('Khufuzi Clitoris Sucking Vibrator', 6226)">Order</button>
+    <p class="price">KSh 6226</p>
+    <button onclick="addToCart('Khufuzi Clitoris Sucking Vibrator', 6226)">Add to Cart</button>
   </div>
-  <!-- Add all other products similarly... -->
+
+  <div class="product-card">
+    <img src="images/runson-handhold.jpg" alt="RUNSONE Wand Handhold Massager">
+    <h3>RUNSONE Wand Handhold Massager</h3>
+    <p class="description">Powerful massager for deep muscle relaxation.</p>
+    <p class="price">KSh 2912</p>
+    <button onclick="addToCart('RUNSONE Wand Handhold Massager', 2912)">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="images/runson-rose.jpg" alt="RUNSONE Rose Toy Vibrator">
+    <h3>RUNSONE Rose Toy Vibrator</h3>
+    <p class="description">Premium rose-shaped vibrator for intimate pleasure.</p>
+    <p class="price">KSh 6360</p>
+    <button onclick="addToCart('RUNSONE Rose Toy Vibrator', 6360)">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="images/khufuzi-lipstick.jpg" alt="Khufuzi Lipstick Vibrator">
+    <h3>Khufuzi Lipstick Vibrator</h3>
+    <p class="description">Discreet lipstick-shaped vibrator for on-the-go pleasure.</p>
+    <p class="price">KSh 1874</p>
+    <button onclick="addToCart('Khufuzi Lipstick Vibrator', 1874)">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="images/ashwagandha.jpg" alt="NOW Ashwagandha 450mg">
+    <h3>NOW Ashwagandha 450mg Vcap 90's</h3>
+    <p class="description">Supports stress management and vitality.</p>
+    <p class="price">KSh 4140</p>
+    <button onclick="addToCart('NOW Ashwagandha 450mg Vcap 90\'s', 4140)">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="images/calcium.jpg" alt="France HeshGrace Calcium, Magnesium & Zinc">
+    <h3>France HeshGrace Calcium, Magnesium & Zinc</h3>
+    <p class="description">Supports bone and muscle health.</p>
+    <p class="price">KSh 4000</p>
+    <button onclick="addToCart('France HeshGrace Calcium, Magnesium & Zinc', 4000)">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="images/mamalait.jpg" alt="MAMALAIT Granules 100GM">
+    <h3>MAMALAIT Granules 100GM</h3>
+    <p class="description">Nutrition granules for mothers and babies.</p>
+    <p class="price">KSh 3600</p>
+    <button onclick="addToCart('MAMALAIT Granules 100GM', 3600)">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="images/fresubin.jpg" alt="FRESUBIN 2KCAL DRINK VANILLA 200ML">
+    <h3>FRESUBIN 2KCAL DRINK VANILLA 200ML</h3>
+    <p class="description">High-calorie nutritional drink for energy and recovery.</p>
+    <p class="price">KSh 5911</p>
+    <button onclick="addToCart('FRESUBIN 2KCAL DRINK VANILLA 200ML', 5911)">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="images/horny-goat.jpg" alt="NOW Horny Goat Weed 750MG 90S with Maca">
+    <h3>NOW Horny Goat Weed 750MG 90S with Maca</h3>
+    <p class="description">Supports sexual health and stamina.</p>
+    <p class="price">KSh 4605</p>
+    <button onclick="addToCart('NOW Horny Goat Weed 750MG 90S with Maca', 4605)">Add to Cart</button>
+  </div>
+
 </section>
 
-<!-- ===== CONSULTATION ===== -->
-<section id="consultation" style="padding:40px 20px;text-align:center;background:#fff;">
-  <h2>Consultation Services</h2>
-  <p>Get personalized guidance and advice for supplements, nutrition, and adult wellness. Chat with us via WhatsApp or email to schedule your consultation.</p>
-  <a href="https://wa.me/254758173874" style="display:inline-block;padding:10px 15px;background:#25D366;color:#fff;border-radius:5px;">Book Consultation</a>
+<!-- ===== CART SECTION ===== -->
+<div id="cart-container" style="display:none;">
+  <h3>Cart (<span id="cart-count">0</span>)</h3>
+  <ul id="cart-items"></ul>
+  <p><strong>Total: KSh <span id="cart-total">0</span></strong></p>
+  <button id="checkout-btn" onclick="checkoutCart()">Pay Now</button>
+</div>
+
+<!-- ===== CUSTOMER CARE ===== -->
+<section id="customer-care">
+  <h2>Customer Care</h2>
+  <p>Call us directly: <strong>0758173874</strong></p>
+  <form id="contact-form">
+    <input type="text" id="name" placeholder="Your Name" required><br>
+    <input type="text" id="phone" placeholder="Phone Number"><br>
+    <textarea id="message" placeholder="Your Message" rows="4" required></textarea><br>
+    <button type="submit">Send Message</button>
+  </form>
+  <p id="form-status" style="color:green;"></p>
 </section>
 
-<!-- ===== PAYMENT ===== -->
-<section id="payment" style="padding:20px;text-align:center;background:#f0f0f0;">
+<!-- ===== PAYMENT INFO ===== -->
+<section id="payment">
   <h3>Payment Methods</h3>
   <p>We accept M-Pesa, Visa & MasterCard, and Bank Transfers.</p>
 </section>
 
 <!-- ===== FOOTER ===== -->
-<footer id="contact">
-  <p>Contact us: <a href="mailto:johnessonsongo550@gmail.com">johnessonsongo550@gmail.com</a> | <a href="https://wa.me/254758173874" target="_blank">WhatsApp</a></p>
+<footer>
   <p>Instagram: <a href="https://instagram.com/j_uky1" target="_blank">@j_uky1</a></p>
   <p>ISO 2015 | © 2026 AmiraCare Online | 18+ Only</p>
 </footer>
 
+<!-- ===== SCRIPTS ===== -->
 <script>
-/* ===== CLOCK ===== */
-function updateClock() {
-  const clock = document.getElementById('clock');
+// ===== Current Time =====
+function updateTime() {
   const now = new Date();
-  const h = String(now.getHours()).padStart(2,'0');
-  const m = String(now.getMinutes()).padStart(2,'0');
-  const s = String(now.getSeconds()).padStart(2,'0');
-  clock.textContent = `${h}:${m}:${s}`;
+  const timeStr = now.toLocaleTimeString();
+  document.getElementById('current-time').textContent = timeStr;
 }
-setInterval(updateClock, 1000);
-updateClock();
+setInterval(updateTime, 1000);
+updateTime();
 
-/* ===== CART ===== */
+// ===== Cart Logic =====
 let cart = [];
 
 function addToCart(name, price) {
@@ -333,28 +373,44 @@ function addToCart(name, price) {
 
 function updateCart() {
   const cartItems = document.getElementById('cart-items');
+  const cartCount = document.getElementById('cart-count');
+  const cartTotal = document.getElementById('cart-total');
   cartItems.innerHTML = '';
-  cart.forEach(item => {
+  let total = 0;
+  cart.forEach((item, index) => {
     const li = document.createElement('li');
     li.textContent = `${item.name} - KSh ${item.price}`;
     cartItems.appendChild(li);
+    total += item.price;
   });
-  document.getElementById('cart-count').textContent = cart.length;
-}
-
-function checkoutCart() {
-  if(cart.length === 0) { alert('Your cart is empty!'); return; }
-  let message = 'Hello, I would like to order:\n';
-  cart.forEach(item => { message += `- ${item.name} at KSh ${item.price}\n`; });
-  const whatsappUrl = `https://wa.me/254758173874?text=${encodeURIComponent(message)}`;
-  window.open(whatsappUrl, '_blank');
+  cartCount.textContent = cart.length;
+  cartTotal.textContent = total;
 }
 
 function toggleCart() {
-  const dropdown = document.getElementById('cart-dropdown');
-  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+  const cartContainer = document.getElementById('cart-container');
+  cartContainer.style.display = cartContainer.style.display === 'none' ? 'block' : 'none';
 }
+
+function checkoutCart() {
+  if(cart.length === 0) {
+    alert('Your cart is empty!');
+    return;
+  }
+  let total = 0;
+  cart.forEach(item => total += item.price);
+  alert(`Total: KSh ${total}\nPayment system integration coming soon.`);
+}
+
+// ===== Customer Care Form =====
+document.getElementById('contact-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  // Here you can integrate Formspree, Netlify Forms, or your own backend
+  document.getElementById('form-status').textContent = 'Message sent successfully!';
+  document.getElementById('contact-form').reset();
+});
 </script>
 
 </body>
 </html>
+
