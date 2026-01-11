@@ -13,13 +13,13 @@ a { text-decoration: none; }
 /* ===== Header ===== */
 header {
   background-color: #ffffff;
-  padding: 15px 30px;
+  padding: 20px 40px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 header .logo img {
-  height: 600px; /* Bigger logo */
+  height: 200px; /* Bigger logo */
   width: auto;   /* Maintain aspect ratio */
 }
 
