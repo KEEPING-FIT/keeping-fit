@@ -13,14 +13,14 @@ a { text-decoration: none; }
 /* ===== Header ===== */
 header {
   background-color: #ffffff;
-  padding: 20px 40px;
+  padding: 40px 30px 30px 30px; /* More space on top for big logo */
   text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 header .logo img {
-  height: 200px; /* Bigger logo */
-  width: auto;   /* Maintain aspect ratio */
+  height: 180px; /* Eye-catching logo size */
+  width: auto;   /* Keep aspect ratio */
 }
 
 /* ===== Product Grid Container ===== */
@@ -52,7 +52,7 @@ header .logo img {
 .product-card img {
   width: 100%;
   height: auto;
-  max-height: 350px; /* Increased image size */
+  max-height: 350px; /* Bigger product image */
   object-fit: contain;
   margin-bottom: 10px;
 }
@@ -126,4 +126,5 @@ footer a {
   }
 }
 </style>
+
 
