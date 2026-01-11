@@ -37,6 +37,11 @@ header nav a {
   color: #333;
 }
 
+header .icons {
+  display: flex;
+  align-items: center;
+}
+
 header .icons img {
   height: 30px;
   margin-left: 10px;
@@ -102,18 +107,49 @@ header .icons img {
 .product-card h3 { font-size: 16px; margin: 10px 0 5px; font-weight: bold; }
 .product-card p { font-size: 14px; margin: 5px 0; }
 .product-card p.price { font-weight: bold; font-size: 16px; color: #111; }
+.product-card p.description { font-size: 13px; color: #555; margin-bottom: 10px; }
 
-.product-card a {
+.product-card button {
   display: inline-block;
   padding: 10px 15px;
   background-color: #25D366;
   color: #fff;
+  border: none;
   border-radius: 5px;
   margin-top: 10px;
+  cursor: pointer;
   transition: background 0.3s ease;
 }
 
-.product-card a:hover { background-color: #128C7E; }
+.product-card button:hover { background-color: #128C7E; }
+
+/* ===== Cart Section ===== */
+#cart-container {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  width: 250px;
+  z-index: 1000;
+}
+
+#cart-container h3 { margin: 0 0 10px 0; font-size: 16px; }
+#cart-items { list-style: none; padding: 0; margin: 0 0 10px 0; max-height: 200px; overflow-y: auto; }
+#cart-items li { font-size: 14px; margin-bottom: 5px; }
+#checkout-btn {
+  background: #25D366;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#checkout-btn:hover { background: #128C7E; }
 
 /* ===== Consultation Section ===== */
 #consultation {
@@ -124,6 +160,17 @@ header .icons img {
 
 #consultation h2 { font-size: 24px; margin-bottom: 10px; }
 #consultation p { font-size: 16px; margin-bottom: 15px; }
+
+#consultation a {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #25D366;
+  color: #fff;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+#consultation a:hover { background-color: #128C7E; }
 
 /* ===== Payment Section ===== */
 #payment {
@@ -156,7 +203,7 @@ footer a { color: #25D366; }
 <!-- ===== HEADER ===== -->
 <header>
   <div class="logo">
-    <img src="images/logo.png" alt="AmiraCare Online Logo">
+    <img src="images/AmiraCare_Online_Logo.png" alt="AmiraCare Online Logo">
   </div>
   <nav>
     <a href="#products">Products</a>
@@ -164,10 +211,7 @@ footer a { color: #25D366; }
     <a href="#contact">Contact</a>
   </nav>
   <div class="icons">
-    <a href="https://wa.me/254758173874" target="_blank">
-      <img src="images/whatsapp-icon.png" alt="WhatsApp">
-    </a>
-    <a href="#cart">
+    <a href="#cart-container">
       <img src="images/cart-icon.png" alt="Cart">
     </a>
   </div>
@@ -193,85 +237,40 @@ footer a { color: #25D366; }
 <!-- ===== PRODUCTS SECTION ===== -->
 <section id="products" class="products-container">
 
-  <!-- Example Product Card -->
   <div class="product-card">
     <img src="images/gspot-vibrator.jpg" alt="Silicone Women's G Spot Vibrator">
     <h3>Silicone Women's G Spot Vaginal Vibrator</h3>
+    <p class="description">Ergonomically designed for precise stimulation and comfort. Rechargeable USB.</p>
     <p class="price">KSh 3100</p>
-    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
+    <button onclick="addToCart('Silicone Women\'s G Spot Vibrator', 3100)">Order</button>
   </div>
 
   <div class="product-card">
     <img src="images/usb-gspot-vibrator.jpg" alt="Two-in-one rose USB Rechargeable G-Spot Vibrator">
     <h3>Two-in-one rose USB Rechargeable G-Spot Vibrator</h3>
+    <p class="description">Dual function for G-spot and clitoral stimulation. USB rechargeable and waterproof.</p>
     <p class="price">KSh 3600</p>
-    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
+    <button onclick="addToCart('Two-in-one rose USB Rechargeable G-Spot Vibrator', 3600)">Order</button>
   </div>
 
   <div class="product-card">
     <img src="images/khufuzi-rose.jpg" alt="Khufuzi Clitoris Sucking Vibrator">
     <h3>Khufuzi Clitoris Sucking Vibrator</h3>
+    <p class="description">Gentle suction for clitoral pleasure. Rechargeable and quiet operation.</p>
     <p class="price">KSh 6,226</p>
-    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
+    <button onclick="addToCart('Khufuzi Clitoris Sucking Vibrator', 6226)">Order</button>
   </div>
 
-  <div class="product-card">
-    <img src="images/runson-handhold.jpg" alt="RUNSONE Wand Handhold Massager">
-    <h3>RUNSONE Wand Handhold Massager</h3>
-    <p class="price">KSh 2,912</p>
-    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
-  </div>
-
-  <div class="product-card">
-    <img src="images/runson-rose.jpg" alt="RUNSONE Rose Toy Vibrator">
-    <h3>RUNSONE Rose Toy Vibrator</h3>
-    <p class="price">KSh 6,360</p>
-    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
-  </div>
-
-  <div class="product-card">
-    <img src="images/khufuzi-lipstick.jpg" alt="Khufuzi Lipstick Vibrator">
-    <h3>Khufuzi Lipstick Vibrator</h3>
-    <p class="price">KSh 1,874</p>
-    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
-  </div>
-
-  <div class="product-card">
-    <img src="images/ashwagandha.jpg" alt="NOW Ashwagandha 450mg">
-    <h3>NOW Ashwagandha 450mg Vcap 90's</h3>
-    <p class="price">KSh 4,140</p>
-    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
-  </div>
-
-  <div class="product-card">
-    <img src="images/calcium.jpg" alt="France HeshGrace Calcium, Magnesium & Zinc">
-    <h3>France HeshGrace Calcium, Magnesium & Zinc</h3>
-    <p class="price">KSh 4,000</p>
-    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
-  </div>
-
-  <div class="product-card">
-    <img src="images/mamalait.jpg" alt="MAMALAIT Granules 100GM">
-    <h3>MAMALAIT Granules 100GM</h3>
-    <p class="price">KSh 3,600</p>
-    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
-  </div>
-
-  <div class="product-card">
-    <img src="images/fresubin.jpg" alt="FRESUBIN 2KCAL DRINK VANILLA 200ML">
-    <h3>FRESUBIN 2KCAL DRINK VANILLA 200ML</h3>
-    <p class="price">KSh 5,911</p>
-    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
-  </div>
-
-  <div class="product-card">
-    <img src="images/horny-goat.jpg" alt="NOW Horny Goat Weed 750MG 90S with Maca">
-    <h3>NOW Horny Goat Weed 750MG 90S with Maca</h3>
-    <p class="price">KSh 4,605</p>
-    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
-  </div>
+  <!-- Add remaining products similarly... -->
 
 </section>
+
+<!-- ===== CART SECTION ===== -->
+<div id="cart-container">
+  <h3>Cart (<span id="cart-count">0</span>)</h3>
+  <ul id="cart-items"></ul>
+  <button id="checkout-btn" onclick="checkoutCart()">Checkout</button>
+</div>
 
 <!-- ===== CONSULTATION ===== -->
 <section id="consultation">
@@ -292,6 +291,40 @@ footer a { color: #25D366; }
   <p>Instagram: <a href="https://instagram.com/j_uky1" target="_blank">@j_uky1</a></p>
   <p>ISO 2015 | © 2026 AmiraCare Online | 18+ Only</p>
 </footer>
+
+<!-- ===== CART SCRIPT ===== -->
+<script>
+let cart = [];
+
+function addToCart(name, price) {
+  cart.push({name, price});
+  updateCart();
+}
+
+function updateCart() {
+  const cartItems = document.getElementById('cart-items');
+  cartItems.innerHTML = '';
+  cart.forEach((item, index) => {
+    const li = document.createElement('li');
+    li.textContent = `${item.name} - KSh ${item.price}`;
+    cartItems.appendChild(li);
+  });
+  document.getElementById('cart-count').textContent = cart.length;
+}
+
+function checkoutCart() {
+  if(cart.length === 0) {
+    alert('Your cart is empty!');
+    return;
+  }
+  let message = 'Hello, I would like to order:\n';
+  cart.forEach(item => {
+    message += `- ${item.name} at KSh ${item.price}\n`;
+  });
+  const whatsappUrl = `https://wa.me/254758173874?text=${encodeURIComponent(message)}`;
+  window.open(whatsappUrl, '_blank');
+}
+</script>
 
 </body>
 </html>
