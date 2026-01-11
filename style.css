@@ -19,7 +19,7 @@ header {
 }
 
 header .logo img {
-  height: 120px; /* Bigger logo */
+  height: 220px; /* Bigger logo */
   width: auto;   /* Maintain aspect ratio */
 }
 
