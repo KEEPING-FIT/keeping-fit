@@ -8,9 +8,7 @@ body {
   padding: 0;
 }
 
-a {
-  text-decoration: none;
-}
+a { text-decoration: none; }
 
 /* ===== Header ===== */
 header {
@@ -18,6 +16,11 @@ header {
   padding: 15px 30px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .logo img {
+  height: 120px; /* Bigger logo */
+  width: auto;   /* Maintain aspect ratio */
 }
 
 /* ===== Product Grid Container ===== */
@@ -49,7 +52,7 @@ header {
 .product-card img {
   width: 100%;
   height: auto;
-  max-height: 250px;
+  max-height: 350px; /* Increased image size */
   object-fit: contain;
   margin-bottom: 10px;
 }
@@ -66,24 +69,33 @@ header {
 }
 
 /* ===== Price ===== */
-.product-card p:nth-of-type(1) {
+.product-card p.price {
   font-weight: bold;
   font-size: 16px;
   color: #111;
 }
 
-/* ===== WhatsApp Button ===== */
-.product-card a {
+/* ===== Description ===== */
+.product-card p.description {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* ===== Order Button ===== */
+.product-card button {
   display: inline-block;
   padding: 10px 15px;
-  background-color: #25D366; /* WhatsApp Green */
+  background-color: #25D366;
   color: #fff;
+  border: none;
   border-radius: 5px;
   margin-top: 10px;
+  cursor: pointer;
   transition: background 0.3s ease;
 }
 
-.product-card a:hover {
+.product-card button:hover {
   background-color: #128C7E;
 }
 
