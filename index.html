@@ -1,104 +1,299 @@
-<div class="products-container" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AmiraCare Online</title>
+<style>
+/* ===== Global Styles ===== */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
 
-  <!-- Item 1 -->
-  <div class="product-card" style="border:1px solid #ddd; padding:10px; width:250px; text-align:center;">
-    <img src="https://i5.walmartimages.com/seo/Mood-Frisky-G-Spot-Vibrator-Pink_0b4267e1-f15a-4276-a7ce-e44a04b8ab6e.574e26327037719a7847839f8b4e56b.png?odnBg=FFFFFF&odnHeight=768&odnWidth=768" alt="Silicone Women's G Spot Vibrator" style="width:100%; height:auto;">
-    <h3>Silicone Women's G Spot Vibrator (Pink)</h3>
-    <p>KSh 3,100</p>
-    <p>Professional quality, rechargeable adult wellness device. Discreet and portable.</p>
-    <a href="https://wa.me/254758173874?text=Hello,%20I%20would%20like%20to%20order%20Silicone%20Women's%20G%20Spot%20Vibrator" style="display:inline-block; padding:10px 15px; background:#25D366; color:white; text-decoration:none; border-radius:5px;">Order on WhatsApp</a>
+a { text-decoration: none; }
+
+/* ===== Header ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+}
+
+header .logo img {
+  height: 60px;
+}
+
+header nav a {
+  margin: 0 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+header .icons img {
+  height: 30px;
+  margin-left: 10px;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(to right, #25D366, #A8E6CF);
+  color: #fff;
+}
+
+.hero h1 { font-size: 36px; margin-bottom: 10px; }
+.hero p { font-size: 18px; }
+
+/* ===== Filter/Search ===== */
+.filter-bar {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.filter-bar input, .filter-bar select {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* ===== Products Grid ===== */
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 30px 20px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 250px;
+  background-color: #fff;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-card h3 { font-size: 16px; margin: 10px 0 5px; font-weight: bold; }
+.product-card p { font-size: 14px; margin: 5px 0; }
+.product-card p.price { font-weight: bold; font-size: 16px; color: #111; }
+
+.product-card a {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #25D366;
+  color: #fff;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.product-card a:hover { background-color: #128C7E; }
+
+/* ===== Consultation Section ===== */
+#consultation {
+  padding: 40px 20px;
+  text-align: center;
+  background: #fff;
+}
+
+#consultation h2 { font-size: 24px; margin-bottom: 10px; }
+#consultation p { font-size: 16px; margin-bottom: 15px; }
+
+/* ===== Payment Section ===== */
+#payment {
+  padding: 20px;
+  text-align: center;
+  background: #f0f0f0;
+}
+
+#payment h3 { font-size: 20px; margin-bottom: 10px; }
+#payment p { font-size: 16px; }
+
+/* ===== Footer ===== */
+footer {
+  background-color: #222;
+  color: #fff;
+  padding: 25px 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+footer a { color: #25D366; }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) { .product-card { width: 45%; } }
+@media (max-width: 480px) { .product-card { width: 90%; } }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="logo">
+    <img src="images/logo.png" alt="AmiraCare Online Logo">
+  </div>
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#consultation">Consultation</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="icons">
+    <a href="https://wa.me/254758173874" target="_blank">
+      <img src="images/whatsapp-icon.png" alt="WhatsApp">
+    </a>
+    <a href="#cart">
+      <img src="images/cart-icon.png" alt="Cart">
+    </a>
+  </div>
+</header>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero">
+  <h1>AmiraCare Online</h1>
+  <p>Health & Happiness Delivered</p>
+</section>
+
+<!-- ===== FILTER / SEARCH BAR ===== -->
+<section class="filter-bar">
+  <input type="text" placeholder="Search products...">
+  <select>
+    <option value="">All Categories</option>
+    <option value="adult">Adult Wellness</option>
+    <option value="supplements">Supplements</option>
+    <option value="nutrition">Nutrition Drinks</option>
+  </select>
+</section>
+
+<!-- ===== PRODUCTS SECTION ===== -->
+<section id="products" class="products-container">
+
+  <!-- Example Product Card -->
+  <div class="product-card">
+    <img src="images/gspot-vibrator.jpg" alt="Silicone Women's G Spot Vibrator">
+    <h3>Silicone Women's G Spot Vaginal Vibrator</h3>
+    <p class="price">KSh 3100</p>
+    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
   </div>
 
-  <!-- Item 2 -->
-  <div class="product-card" style="border:1px solid #ddd; padding:10px; width:250px; text-align:center;">
-    <img src="https://m.media-amazon.com/images/I/61YsYcWsjEL._AC_UF1000%2C1000_QL80_.jpg" alt="Two-in-One Rose Rechargeable G-Spot Vibrator" style="width:100%; height:auto;">
-    <h3>Two-in-One Rose Rechargeable G-Spot Vibrator</h3>
-    <p>KSh 3,600</p>
-    <p>Dual-function adult device for targeted stimulation. USB rechargeable and waterproof.</p>
-    <a href="https://wa.me/254758173874?text=Hello,%20I%20would%20like%20to%20order%20Two-in-One%20Rose%20Rechargeable%20G-Spot%20Vibrator" style="display:inline-block; padding:10px 15px; background:#25D366; color:white; text-decoration:none; border-radius:5px;">Order on WhatsApp</a>
+  <div class="product-card">
+    <img src="images/usb-gspot-vibrator.jpg" alt="Two-in-one rose USB Rechargeable G-Spot Vibrator">
+    <h3>Two-in-one rose USB Rechargeable G-Spot Vibrator</h3>
+    <p class="price">KSh 3600</p>
+    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
   </div>
 
-  <!-- Item 3 -->
-  <div class="product-card" style="border:1px solid #ddd; padding:10px; width:250px; text-align:center;">
-    <img src="https://i.ebayimg.com/images/g/vcQAAOSwEUZmhext/s-l1200.jpg" alt="Khufuzi Rose Clitoral Stimulator" style="width:100%; height:auto;">
-    <h3>Khufuzi Rose Clitoral Stimulator</h3>
-    <p>KSh 6,226</p>
-    <p>Powerful compact adult massager. Rechargeable and waterproof for easy use.</p>
-    <a href="https://wa.me/254758173874?text=Hello,%20I%20would%20like%20to%20order%20Khufuzi%20Rose%20Clitoral%20Stimulator" style="display:inline-block; padding:10px 15px; background:#25D366; color:white; text-decoration:none; border-radius:5px;">Order on WhatsApp</a>
+  <div class="product-card">
+    <img src="images/khufuzi-rose.jpg" alt="Khufuzi Clitoris Sucking Vibrator">
+    <h3>Khufuzi Clitoris Sucking Vibrator</h3>
+    <p class="price">KSh 6,226</p>
+    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
   </div>
 
-  <!-- Item 4 -->
-  <div class="product-card" style="border:1px solid #ddd; padding:10px; width:250px; text-align:center;">
-    <img src="https://images-na.ssl-images-amazon.com/images/I/515awzUZnSL._AC_UL495_SR435,495_.jpg" alt="RUNSONE Wand Handheld Massager" style="width:100%; height:auto;">
-    <h3>RUNSONE Wand Handheld Massager</h3>
-    <p>KSh 2,912</p>
-    <p>Rechargeable, portable body massager for muscle relaxation and wellness.</p>
-    <a href="https://wa.me/254758173874?text=Hello,%20I%20would%20like%20to%20order%20RUNSONE%20Wand%20Handheld%20Massager" style="display:inline-block; padding:10px 15px; background:#25D366; color:white; text-decoration:none; border-radius:5px;">Order on WhatsApp</a>
+  <div class="product-card">
+    <img src="images/runson-handhold.jpg" alt="RUNSONE Wand Handhold Massager">
+    <h3>RUNSONE Wand Handhold Massager</h3>
+    <p class="price">KSh 2,912</p>
+    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
   </div>
 
-  <!-- Item 5 -->
-  <div class="product-card" style="border:1px solid #ddd; padding:10px; width:250px; text-align:center;">
-    <img src="https://i5.walmartimages.com/asr/bf316c03-eb58-4bce-a2c6-8fdcb50cb69a.93e0faf93c40a747c014af786c98289b.jpeg?odnBg=FFFFFF&odnHeight=768&odnWidth=768" alt="RUNSONE Rose Thrusting G-Spot Device" style="width:100%; height:auto;">
-    <h3>RUNSONE Rose Thrusting G-Spot Device</h3>
-    <p>KSh 6,360</p>
-    <p>Multi-function device for adult wellness and stimulation. Waterproof and rechargeable.</p>
-    <a href="https://wa.me/254758173874?text=Hello,%20I%20would%20like%20to%20order%20RUNSONE%20Rose%20Thrusting%20G-Spot%20Device" style="display:inline-block; padding:10px 15px; background:#25D366; color:white; text-decoration:none; border-radius:5px;">Order on WhatsApp</a>
+  <div class="product-card">
+    <img src="images/runson-rose.jpg" alt="RUNSONE Rose Toy Vibrator">
+    <h3>RUNSONE Rose Toy Vibrator</h3>
+    <p class="price">KSh 6,360</p>
+    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
   </div>
 
-  <!-- Item 6 -->
-  <div class="product-card" style="border:1px solid #ddd; padding:10px; width:250px; text-align:center;">
-    <img src="https://m.media-amazon.com/images/I/51FUkYXFCML._AC_UF1000,1000_QL80_.jpg" alt="Khufuzi Lipstick Mini Vibrator" style="width:100%; height:auto;">
-    <h3>Khufuzi Lipstick Mini Vibrator</h3>
-    <p>KSh 1,874</p>
-    <p>Compact adult device disguised as lipstick. Rechargeable and discreet.</p>
-    <a href="https://wa.me/254758173874?text=Hello,%20I%20would%20like%20to%20order%20Khufuzi%20Lipstick%20Mini%20Vibrator" style="display:inline-block; padding:10px 15px; background:#25D366; color:white; text-decoration:none; border-radius:5px;">Order on WhatsApp</a>
+  <div class="product-card">
+    <img src="images/khufuzi-lipstick.jpg" alt="Khufuzi Lipstick Vibrator">
+    <h3>Khufuzi Lipstick Vibrator</h3>
+    <p class="price">KSh 1,874</p>
+    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
   </div>
 
-  <!-- Item 7 -->
-  <div class="product-card" style="border:1px solid #ddd; padding:10px; width:250px; text-align:center;">
-    <img src="https://m.media-amazon.com/images/I/712kxxBs-jL.jpg" alt="NOW Ashwagandha Extract 450mg" style="width:100%; height:auto;">
-    <h3>NOW Ashwagandha Extract 450mg (90 vcaps)</h3>
-    <p>KSh 4,140</p>
-    <p>Supports stress management, energy, and wellness. High-quality herbal supplement.</p>
-    <a href="https://wa.me/254758173874?text=Hello,%20I%20would%20like%20to%20order%20NOW%20Ashwagandha%20450mg" style="display:inline-block; padding:10px 15px; background:#25D366; color:white; text-decoration:none; border-radius:5px;">Order on WhatsApp</a>
+  <div class="product-card">
+    <img src="images/ashwagandha.jpg" alt="NOW Ashwagandha 450mg">
+    <h3>NOW Ashwagandha 450mg Vcap 90's</h3>
+    <p class="price">KSh 4,140</p>
+    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
   </div>
 
-  <!-- Item 8 -->
-  <div class="product-card" style="border:1px solid #ddd; padding:10px; width:250px; text-align:center;">
-    <img src="https://images.heb.com/is/image/HEBGrocery/001939905-1" alt="France HeshGrace Calcium Magnesium Zinc" style="width:100%; height:auto;">
+  <div class="product-card">
+    <img src="images/calcium.jpg" alt="France HeshGrace Calcium, Magnesium & Zinc">
     <h3>France HeshGrace Calcium, Magnesium & Zinc</h3>
-    <p>KSh 4,000</p>
-    <p>Essential minerals for bone, muscle, and overall wellness. High-quality supplement.</p>
-    <a href="https://wa.me/254758173874?text=Hello,%20I%20would%20like%20to%20order%20France%20HeshGrace%20Calcium%20Magnesium%20Zinc" style="display:inline-block; padding:10px 15px; background:#25D366; color:white; text-decoration:none; border-radius:5px;">Order on WhatsApp</a>
+    <p class="price">KSh 4,000</p>
+    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
   </div>
 
-  <!-- Item 9 -->
-  <div class="product-card" style="border:1px solid #ddd; padding:10px; width:250px; text-align:center;">
-    <img src="https://www.dischem.co.za/api/catalog/product/6/7/67fcdc79c7b4f_4051895011660.jpg?image-type=image&store=default" alt="Mamalait Granules 100g" style="width:100%; height:auto;">
-    <h3>Mamalait Granules 100g</h3>
-    <p>KSh 3,600</p>
-    <p>Nutritional granules for energy and wellness. Ideal for daily supplement intake.</p>
-    <a href="https://wa.me/254758173874?text=Hello,%20I%20would%20like%20to%20order%20Mamalait%20Granules%20100g" style="display:inline-block; padding:10px 15px; background:#25D366; color:white; text-decoration:none; border-radius:5px;">Order on WhatsApp</a>
+  <div class="product-card">
+    <img src="images/mamalait.jpg" alt="MAMALAIT Granules 100GM">
+    <h3>MAMALAIT Granules 100GM</h3>
+    <p class="price">KSh 3,600</p>
+    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
   </div>
 
-  <!-- Item 10 -->
-  <div class="product-card" style="border:1px solid #ddd; padding:10px; width:250px; text-align:center;">
-    <img src="https://healtsy.com/cdn/shop/files/fresubin-2kcal-drink-vanilie-fibre-4-x-200ml-fresenius-kabi-p438825917-dD4_jpg.webp?v=1734436435" alt="Fresubin 2kcal Drink Vanilla 200ml" style="width:100%; height:auto;">
-    <h3>Fresubin 2kcal Drink Vanilla 200ml</h3>
-    <p>KSh 5,911</p>
-    <p>High-calorie nutritional drink for energy and recovery. Delicious vanilla flavor.</p>
-    <a href="https://wa.me/254758173874?text=Hello,%20I%20would%20like%20to%20order%20Fresubin%202kcal%20Drink%20Vanilla" style="display:inline-block; padding:10px 15px; background:#25D366; color:white; text-decoration:none; border-radius:5px;">Order on WhatsApp</a>
+  <div class="product-card">
+    <img src="images/fresubin.jpg" alt="FRESUBIN 2KCAL DRINK VANILLA 200ML">
+    <h3>FRESUBIN 2KCAL DRINK VANILLA 200ML</h3>
+    <p class="price">KSh 5,911</p>
+    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
   </div>
 
-  <!-- Item 11 -->
-  <div class="product-card" style="border:1px solid #ddd; padding:10px; width:250px; text-align:center;">
-    <img src="https://m.media-amazon.com/images/I/6134gR-j5kL._AC_UL495_SR435,495_.jpg" alt="NOW Horny Goat Weed 750mg with Maca (90s)" style="width:100%; height:auto;">
-    <h3>NOW Horny Goat Weed 750mg with Maca (90s)</h3>
-    <p>KSh 4,605</p>
-    <p>Supports wellness and vitality. Herbal supplement with Maca for enhanced effect.</p>
-    <a href="https://wa.me/254758173874?text=Hello,%20I%20would%20like%20to%20order%20NOW%20Horny%20Goat%20Weed%20750mg" style="display:inline-block; padding:10px 15px; background:#25D366; color:white; text-decoration:none; border-radius:5px;">Order on WhatsApp</a>
+  <div class="product-card">
+    <img src="images/horny-goat.jpg" alt="NOW Horny Goat Weed 750MG 90S with Maca">
+    <h3>NOW Horny Goat Weed 750MG 90S with Maca</h3>
+    <p class="price">KSh 4,605</p>
+    <a href="https://wa.me/254758173874">Order on WhatsApp</a>
   </div>
 
-</div>
+</section>
+
+<!-- ===== CONSULTATION ===== -->
+<section id="consultation">
+  <h2>Consultation Services</h2>
+  <p>Get personalized guidance and advice for supplements, nutrition, and adult wellness. Chat with us via WhatsApp or email to schedule your consultation.</p>
+  <a href="https://wa.me/254758173874">Book Consultation</a>
+</section>
+
+<!-- ===== PAYMENT INFO ===== -->
+<section id="payment">
+  <h3>Payment Methods</h3>
+  <p>We accept M-Pesa, Visa & MasterCard, and Bank Transfers.</p>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer id="contact">
+  <p>Contact us: <a href="mailto:johnessonsongo550@gmail.com">johnessonsongo550@gmail.com</a> | <a href="https://wa.me/254758173874" target="_blank">WhatsApp</a></p>
+  <p>Instagram: <a href="https://instagram.com/j_uky1" target="_blank">@j_uky1</a></p>
+  <p>ISO 2015 | © 2026 AmiraCare Online | 18+ Only</p>
+</footer>
+
+</body>
+</html>
 
 
