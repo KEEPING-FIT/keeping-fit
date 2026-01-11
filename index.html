@@ -18,60 +18,18 @@ a { text-decoration: none; }
 
 /* ===== Header ===== */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background: #fff;
+  background-color: #ffffff;
+  padding: 40px 30px 30px 30px; /* More space for big logo */
+  text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  flex-wrap: wrap;
 }
 
 header .logo img {
-  height: 60px;
+  height: 180px; /* Eye-catching size */
+  width: auto;
 }
 
-header nav a {
-  margin: 0 10px;
-  font-weight: bold;
-  color: #333;
-}
-
-header .icons {
-  display: flex;
-  align-items: center;
-}
-
-header .icons img {
-  height: 30px;
-  margin-left: 10px;
-}
-
-/* ===== Hero Section ===== */
-.hero {
-  text-align: center;
-  padding: 40px 20px;
-  background: linear-gradient(to right, #25D366, #A8E6CF);
-  color: #fff;
-}
-
-.hero h1 { font-size: 36px; margin-bottom: 10px; }
-.hero p { font-size: 18px; }
-
-/* ===== Filter/Search ===== */
-.filter-bar {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.filter-bar input, .filter-bar select {
-  padding: 10px;
-  margin: 5px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-/* ===== Products Grid ===== */
+/* ===== Product Grid Container ===== */
 .products-container {
   display: flex;
   flex-wrap: wrap;
@@ -80,6 +38,7 @@ header .icons img {
   padding: 30px 20px;
 }
 
+/* ===== Product Card ===== */
 .product-card {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -99,16 +58,35 @@ header .icons img {
 .product-card img {
   width: 100%;
   height: auto;
-  max-height: 250px;
+  max-height: 350px; /* Bigger product image */
   object-fit: contain;
   margin-bottom: 10px;
 }
 
-.product-card h3 { font-size: 16px; margin: 10px 0 5px; font-weight: bold; }
-.product-card p { font-size: 14px; margin: 5px 0; }
-.product-card p.price { font-weight: bold; font-size: 16px; color: #111; }
-.product-card p.description { font-size: 13px; color: #555; margin-bottom: 10px; }
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0 5px 0;
+  font-weight: bold;
+}
 
+.product-card p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.product-card p.price {
+  font-weight: bold;
+  font-size: 16px;
+  color: #111;
+}
+
+.product-card p.description {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* ===== Order Button ===== */
 .product-card button {
   display: inline-block;
   padding: 10px 15px;
@@ -121,12 +99,14 @@ header .icons img {
   transition: background 0.3s ease;
 }
 
-.product-card button:hover { background-color: #128C7E; }
+.product-card button:hover {
+  background-color: #128C7E;
+}
 
 /* ===== Cart Section ===== */
 #cart-container {
   position: fixed;
-  top: 80px;
+  top: 100px;
   right: 20px;
   background: #fff;
   border: 1px solid #ddd;
@@ -151,51 +131,28 @@ header .icons img {
 }
 #checkout-btn:hover { background: #128C7E; }
 
-/* ===== Consultation Section ===== */
-#consultation {
-  padding: 40px 20px;
-  text-align: center;
-  background: #fff;
-}
-
-#consultation h2 { font-size: 24px; margin-bottom: 10px; }
-#consultation p { font-size: 16px; margin-bottom: 15px; }
-
-#consultation a {
-  display: inline-block;
-  padding: 10px 15px;
-  background-color: #25D366;
-  color: #fff;
-  border-radius: 5px;
-  transition: background 0.3s ease;
-}
-
-#consultation a:hover { background-color: #128C7E; }
-
-/* ===== Payment Section ===== */
-#payment {
-  padding: 20px;
-  text-align: center;
-  background: #f0f0f0;
-}
-
-#payment h3 { font-size: 20px; margin-bottom: 10px; }
-#payment p { font-size: 16px; }
-
 /* ===== Footer ===== */
 footer {
   background-color: #222;
   color: #fff;
-  padding: 25px 20px;
+  padding: 20px;
   text-align: center;
   font-size: 14px;
+  margin-top: 30px;
 }
 
-footer a { color: #25D366; }
+footer a {
+  color: #25D366;
+}
 
 /* ===== Responsive ===== */
-@media (max-width: 768px) { .product-card { width: 45%; } }
-@media (max-width: 480px) { .product-card { width: 90%; } }
+@media (max-width: 768px) {
+  .product-card { width: 45%; }
+}
+
+@media (max-width: 480px) {
+  .product-card { width: 90%; }
+}
 </style>
 </head>
 <body>
@@ -205,37 +162,10 @@ footer a { color: #25D366; }
   <div class="logo">
     <img src="AmiraCare_Online_Logo.png.png" alt="AmiraCare Online Logo">
   </div>
-  <nav>
-    <a href="#products">Products</a>
-    <a href="#consultation">Consultation</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <div class="icons">
-    <a href="#cart-container">
-      <img src="images/cart-icon.png" alt="Cart">
-    </a>
-  </div>
 </header>
 
-<!-- ===== HERO SECTION ===== -->
-<section class="hero">
-  <h1>AmiraCare Online</h1>
-  <p>Health & Happiness Delivered</p>
-</section>
-
-<!-- ===== FILTER / SEARCH BAR ===== -->
-<section class="filter-bar">
-  <input type="text" placeholder="Search products...">
-  <select>
-    <option value="">All Categories</option>
-    <option value="adult">Adult Wellness</option>
-    <option value="supplements">Supplements</option>
-    <option value="nutrition">Nutrition Drinks</option>
-  </select>
-</section>
-
 <!-- ===== PRODUCTS SECTION ===== -->
-<section id="products" class="products-container">
+<section class="products-container">
 
   <div class="product-card">
     <img src="images/gspot-vibrator.jpg" alt="Silicone Women's G Spot Vibrator">
@@ -257,71 +187,71 @@ footer a { color: #25D366; }
     <img src="images/khufuzi-rose.jpg" alt="Khufuzi Clitoris Sucking Vibrator">
     <h3>Khufuzi Clitoris Sucking Vibrator</h3>
     <p class="description">Gentle suction for clitoral pleasure. Rechargeable and quiet operation.</p>
-    <p class="price">KSh 6,226</p>
+    <p class="price">KSh 6226</p>
     <button onclick="addToCart('Khufuzi Clitoris Sucking Vibrator', 6226)">Order</button>
   </div>
 
   <div class="product-card">
     <img src="images/runson-handhold.jpg" alt="RUNSONE Wand Handhold Massager">
     <h3>RUNSONE Wand Handhold Massager</h3>
-    <p class="description">Powerful massager for muscle relaxation and wellness therapy.</p>
-    <p class="price">KSh 2,912</p>
+    <p class="description">Powerful vibrating massager for relaxation and stress relief.</p>
+    <p class="price">KSh 2912</p>
     <button onclick="addToCart('RUNSONE Wand Handhold Massager', 2912)">Order</button>
   </div>
 
   <div class="product-card">
     <img src="images/runson-rose.jpg" alt="RUNSONE Rose Toy Vibrator">
     <h3>RUNSONE Rose Toy Vibrator</h3>
-    <p class="description">Elegant rose-shaped vibrator. Rechargeable and waterproof.</p>
-    <p class="price">KSh 6,360</p>
+    <p class="description">Beautiful rose-shaped design for clitoral stimulation. Rechargeable.</p>
+    <p class="price">KSh 6360</p>
     <button onclick="addToCart('RUNSONE Rose Toy Vibrator', 6360)">Order</button>
   </div>
 
   <div class="product-card">
     <img src="images/khufuzi-lipstick.jpg" alt="Khufuzi Lipstick Vibrator">
     <h3>Khufuzi Lipstick Vibrator</h3>
-    <p class="description">Discreet lipstick-shaped vibrator. Perfect for travel and privacy.</p>
-    <p class="price">KSh 1,874</p>
+    <p class="description">Discrete lipstick-shaped vibrator, perfect for travel and privacy.</p>
+    <p class="price">KSh 1874</p>
     <button onclick="addToCart('Khufuzi Lipstick Vibrator', 1874)">Order</button>
   </div>
 
   <div class="product-card">
     <img src="images/ashwagandha.jpg" alt="NOW Ashwagandha 450mg">
     <h3>NOW Ashwagandha 450mg Vcap 90's</h3>
-    <p class="description">Supports stress management, mental focus, and energy.</p>
-    <p class="price">KSh 4,140</p>
-    <button onclick="addToCart('NOW Ashwagandha 450mg', 4140)">Order</button>
+    <p class="description">Supports stress relief, mood, and overall wellness.</p>
+    <p class="price">KSh 4140</p>
+    <button onclick="addToCart('NOW Ashwagandha 450mg Vcap 90\'s', 4140)">Order</button>
   </div>
 
   <div class="product-card">
     <img src="images/calcium.jpg" alt="France HeshGrace Calcium, Magnesium & Zinc">
     <h3>France HeshGrace Calcium, Magnesium & Zinc</h3>
-    <p class="description">Supports bone health and overall wellness.</p>
-    <p class="price">KSh 4,000</p>
+    <p class="description">Supports bone health and daily mineral requirements.</p>
+    <p class="price">KSh 4000</p>
     <button onclick="addToCart('France HeshGrace Calcium, Magnesium & Zinc', 4000)">Order</button>
   </div>
 
   <div class="product-card">
     <img src="images/mamalait.jpg" alt="MAMALAIT Granules 100GM">
     <h3>MAMALAIT Granules 100GM</h3>
-    <p class="description">Nutritional granules for energy and wellness.</p>
-    <p class="price">KSh 3,600</p>
+    <p class="description">Nutritional support for mothers and infants.</p>
+    <p class="price">KSh 3600</p>
     <button onclick="addToCart('MAMALAIT Granules 100GM', 3600)">Order</button>
   </div>
 
   <div class="product-card">
     <img src="images/fresubin.jpg" alt="FRESUBIN 2KCAL DRINK VANILLA 200ML">
     <h3>FRESUBIN 2KCAL DRINK VANILLA 200ML</h3>
-    <p class="description">High-calorie nutritional drink. Supports recovery and energy.</p>
-    <p class="price">KSh 5,911</p>
+    <p class="description">High-calorie nutrition drink for patients and wellness.</p>
+    <p class="price">KSh 5911</p>
     <button onclick="addToCart('FRESUBIN 2KCAL DRINK VANILLA 200ML', 5911)">Order</button>
   </div>
 
   <div class="product-card">
     <img src="images/horny-goat.jpg" alt="NOW Horny Goat Weed 750MG 90S with Maca">
     <h3>NOW Horny Goat Weed 750MG 90S with Maca</h3>
-    <p class="description">Supports libido and overall sexual wellness.</p>
-    <p class="price">KSh 4,605</p>
+    <p class="description">Supports sexual health and vitality naturally.</p>
+    <p class="price">KSh 4605</p>
     <button onclick="addToCart('NOW Horny Goat Weed 750MG 90S with Maca', 4605)">Order</button>
   </div>
 
@@ -334,21 +264,8 @@ footer a { color: #25D366; }
   <button id="checkout-btn" onclick="checkoutCart()">Checkout</button>
 </div>
 
-<!-- ===== CONSULTATION ===== -->
-<section id="consultation">
-  <h2>Consultation Services</h2>
-  <p>Get personalized guidance and advice for supplements, nutrition, and adult wellness. Chat with us via WhatsApp or email to schedule your consultation.</p>
-  <a href="https://wa.me/254758173874">Book Consultation</a>
-</section>
-
-<!-- ===== PAYMENT INFO ===== -->
-<section id="payment">
-  <h3>Payment Methods</h3>
-  <p>We accept M-Pesa, Visa & MasterCard, and Bank Transfers.</p>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer id="contact">
+<!-- ===== Footer ===== -->
+<footer>
   <p>Contact us: <a href="mailto:johnessonsongo550@gmail.com">johnessonsongo550@gmail.com</a> | <a href="https://wa.me/254758173874" target="_blank">WhatsApp</a></p>
   <p>Instagram: <a href="https://instagram.com/j_uky1" target="_blank">@j_uky1</a></p>
   <p>ISO 2015 | © 2026 AmiraCare Online | 18+ Only</p>
@@ -366,7 +283,7 @@ function addToCart(name, price) {
 function updateCart() {
   const cartItems = document.getElementById('cart-items');
   cartItems.innerHTML = '';
-  cart.forEach((item, index) => {
+  cart.forEach(item => {
     const li = document.createElement('li');
     li.textContent = `${item.name} - KSh ${item.price}`;
     cartItems.appendChild(li);
@@ -390,6 +307,7 @@ function checkoutCart() {
 
 </body>
 </html>
+
 
 
 
